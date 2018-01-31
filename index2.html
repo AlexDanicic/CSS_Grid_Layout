@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS Grid Layout 2</title>
+  <style>
+.problem {
+  color: rgb(40, 160, 216);
+  font-size: 1.2em;
+  padding: 20px 10px 20px 10px;
+  background-color: #333;
+}    
+
+.grid > div {
+  background: #eee;
+  padding: 1em;
+}
+
+.grid > div:nth-child(odd) {
+  background: #ddd;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* Second Fraction */
+
+hr {  
+  height: 2px;
+  width: 70%;
+  background-color: blue;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-gap: 1em;
+  /* setup all rows to 100px height */
+  grid-auto-rows: 100px;
+}
+
+.grid2 > div {
+  background: #eee;
+  padding: 1em;
+}
+
+.grid2 > div:nth-child(odd) {
+  background: #ddd;
+}    
+
+/* Third Fraction */
+
+.grid3 {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-gap: 1em;
+  /* setup all rows to 100px height */
+  grid-auto-rows: 100px;
+}
+
+.grid3 > div {
+  background: #eee;
+  padding: 1em;
+}
+
+.grid3 > div:nth-child(odd) {
+  background: #ddd;
+}    
+
+/* Third Fraction */
+
+.grid4 {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-gap: 1em;
+  /* setup all rows to 100px height BUT STRETCHED */
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.grid4 > div {
+  background: #eee;
+  padding: 1em;
+}
+
+.grid4 > div:nth-child(odd) {
+  background: #ddd;
+}
+/* if we have 9 grids, everithing will adjust at same positions. */
+
+.nested {
+  display: grid;
+  /* this will put them into the line */
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 70px;
+  grid-gap: 1em;
+}
+
+.nested > div {
+  border: #333 1px solid;
+  padding: 1em;
+  
+}
+
+/* button on the bottom of the page */
+
+   
+
+a {
+  text-decoration: none;
+}
+
+span {
+  /* margin: 50px; */
+  margin: 0 auto;    
+}
+
+.clearfix {
+  overflow: auto;
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  padding: 35px 10px 25px 10px;
+}
+
+  </style>
+</head>
+<body>
+    <div class="problem"><p>
+        The purpose of the site is to determine the material. The point of the page is not to be beautiful, but to see what is happening and learn what causes visual changes. Thank you for your understanding. As you can see, the part with the cubes is fixed(second fraction-third option) IMMEDIATELY and causes sweeps on the page.
+    </p></div>
+    <br>
+    <div class="grid">
+      <div>
+        Lorem ipsum dolor sit.
+      </div>
+      <div>
+        Lorem ipsum dolor sit.
+      </div>
+      <div>
+        Lorem ipsum dolor sit.
+      </div>
+      <div>
+        Lorem ipsum dolor sit.
+      </div>
+      <div>
+        Lorem ipsum dolor sit.     
+      </div>
+      <div>
+        Lorem ipsum dolor sit.
+      </div>
+      <div>
+        Lorem ipsum dolor sit.
+      </div>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <!-- 2fr...two fractions -->
+
+    <div class="grid2">
+        <div>
+          Lorem ipsum dolor sit.
+        </div>
+        <div>
+          Lorem ipsum dolor sit.
+        </div>
+        <div>
+          Lorem ipsum dolor sit.
+        </div>
+        <div>
+          Lorem ipsum dolor sit.
+        </div>
+        <div>
+          Lorem ipsum dolor sit.     
+        </div>
+        <div>
+          Lorem ipsum dolor sit.
+        </div>
+        <div>
+          Lorem ipsum dolor sit.
+        </div>
+      </div>
+
+      <br>
+    <hr>
+    <br>
+
+          <!-- 2fr...two fractions second option -->
+
+    <p style="text-align: center; margin: 40px;">grid-auto-rows: 100px will couse problems. It will owerflow..See second block</p>      
+
+    <div class="grid3">
+        <div>
+          Lorem ipsum dolor sit.
+        </div>
+        <div>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio ut quasi dignissimos corporis ad quos quis dolor debitis placeat tenetur minus eos, mollitia eveniet molestiae. Consequatur repudiandae consequuntur odit reiciendis, voluptatibus possimus magnam asperiores dolores, nihil, nesciunt aut quibusdam vero hic? Corrupti temporibus aliquam earum explicabo aliquid illo, eos unde quidem? Laboriosam soluta nam inventore non libero natus. Temporibus quis tempora ratione tempore reprehenderit blanditiis reiciendis ad, non cumque laborum in, beatae cum cupiditate consequatur deserunt molestias unde aliquam repudiandae?
+        </div>
+        <div>
+          Lorem ipsum dolor sit.
+        </div>
+        <div>
+          Lorem ipsum dolor sit.
+        </div>
+        <div>
+          Lorem ipsum dolor sit.     
+        </div>
+        <div>
+          Lorem ipsum dolor sit.
+        </div>
+        <div>
+          Lorem ipsum dolor sit.
+        </div>
+      </div>
+
+      <br>
+    <hr>
+    <br>
+
+          <!-- 2fr...two fractions third option. The 100px will stretch automatically-->
+
+    <p style="text-align: center; margin: 40px; color: rgb(245, 10, 10)">grid-auto-rows: minmax(100px, auto); will stretch the second box as much as needed for space when we MINIMISE THE PAGE...or on mobile phone</p>      
+
+    <div class="grid4">
+        <div>
+          Lorem ipsum dolor sit.
+        </div>
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut consequatur sed autem nemo, aperiam cum neque non esse tempora recusandae voluptate ea repellendus rem corrupti. Totam fuga atque cum odit, eius quaerat reiciendis fugiat veniam earum magni excepturi iste debitis impedit nihil, architecto reprehenderit placeat vitae deserunt praesentium ipsum ex minima ad. Corrupti sapiente in laboriosam quam sint, officiis earum neque exercitationem fugiat hic rerum ex assumenda explicabo dolorem eveniet! Quae pariatur ipsum perferendis a saepe quia quam repudiandae odio!
+        </div>
+        <div class="nested">
+          <div>Lorem</div>
+          <div>Lorem</div>
+          <div>Lorem</div>
+          <div>Lorem</div>
+          <div>Lorem</div>
+          <div>Lorem</div>
+          <div>Lorem</div>
+          <div>Lorem</div>
+          <div>Lorem</div>
+          <div>Lorem</div>
+          <div>Lorem</div>
+          <div>Lorem</div>
+        </div>
+        <div>
+          Lorem ipsum dolor sit.
+        </div>
+        <div>
+          Lorem ipsum dolor sit.     
+        </div>
+        <div>
+          Lorem ipsum dolor sit.
+        </div>
+        <div>
+          Lorem ipsum dolor sit.
+        </div>
+      </div>
+      
+    <!-- <button>    
+        <a href="index.html">First Example</a>    
+    </button> -->
+    <div class="clearfix">
+    <div class="align">
+      <span style="float: left;">
+        <button>
+        <a href="index.html">First Page</a>
+        </button>
+      </span>        
+      <span style="float: right;">
+        <button>
+          <a href="index3.html">Third Page</a>
+        </button>  
+      </span>  
+    </div>
+    </div>
+  
+</body>
+</html>

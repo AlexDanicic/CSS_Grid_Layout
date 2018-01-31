@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS Grid Layout 1</title>
+  <style>
+    .grid > div {
+  background: #eee;
+  padding: 1em;
+}
+
+/* every other element */
+
+.grid > div:nth-child(odd) {
+  background: #ddd;
+}
+
+/* make a main div and a side-bar div. */
+
+.grid {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  /*
+  grid-column-gap: 1em; 
+  grid-row-gap: 1em;
+  = give us a same effect like grid-gap
+  */
+  grid-gap: 1em;
+}
+
+button {
+  text-align: center;
+  margin: 0 auto;
+  display: block;  
+  color: #eee;
+  margin-top: 1rem;  
+}
+
+a {
+  text-decoration: none;
+}
+  </style>
+</head>
+<body>
+  <div class="grid">
+    <div>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit libero eius sed saepe ducimus. Reiciendis facilis suscipit quidem harum repudiandae, qui praesentium magnam quas excepturi illum deserunt sit voluptate eos odit modi similique maxime animi totam quaerat dolorum. Dolorum dolore saepe architecto officia, repellendus perferendis aliquid eaque? Ea, officiis, dolores, magni deserunt ipsa delectus quam id odit distinctio a minus quo obcaecati sed assumenda enim qui voluptatum dolor nostrum consequatur. Minus, tenetur quia! Commodi, cum sequi. Impedit, commodi. Numquam, architecto.
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum vel beatae libero qui magni impedit commodi quisquam? Numquam qui mollitia, vel recusandae, facilis consequatur modi molestiae ipsa praesentium tempora inventore!
+    </div>
+
+    <div>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit libero eius sed saepe ducimus. Reiciendis facilis suscipit quidem harum repudiandae, qui praesentium magnam quas excepturi illum deserunt sit voluptate eos odit modi similique maxime animi totam quaerat dolorum. Dolorum dolore saepe architecto officia, repellendus perferendis aliquid eaque? Ea, officiis, dolores, magni deserunt ipsa delectus quam id odit distinctio a minus quo obcaecati sed assumenda enim qui voluptatum dolor nostrum consequatur. Minus, tenetur quia! Commodi, cum sequi. Impedit, commodi. Numquam, architecto.
+      </div>
+      <div>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum vel beatae libero qui magni impedit commodi quisquam? Numquam qui mollitia, vel recusandae, facilis consequatur modi molestiae ipsa praesentium tempora inventore!
+      </div>
+  </div>
+  <button>    
+      <a href="index2.html">Second Page</a>    
+  </button>
+  
+</body>
+</html>

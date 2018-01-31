@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS Grid Layout 3</title>
+  <style>
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 1em;
+  /* align all elements to start, end or center. The default is STRETCH! */
+  justify-items: stretch;
+  /* align items: start, center or end. Default is STRETCH! */
+  align-items: stretch;
+}
+
+/* BOXES */
+
+.box1 {
+  align-self: start;
+}
+
+.box2 {
+  align-self: end;
+}
+
+.box3 {
+  justify-self: end;
+}
+
+.box4 {
+
+}
+
+.wrapper > div {
+  background: #eee;
+  padding: 1em;
+}
+
+.wrapper > div:nth-child(odd){
+  background: #ddd;
+}
+
+/* IMG */
+
+ img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+} 
+
+/* Second part */
+.wrapper2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 1em;
+  /* align all elements to start, end or center. The default is STRETCH! */
+  justify-items: stretch;
+  /* align items: start, center or end. Default is STRETCH! */
+  align-items: stretch;
+}
+
+/* BOXES Second part */
+
+.box1a {
+  /* align-self: start; */
+  grid-column: 1/3; /* from line 1 to 3 */
+  /* same here.. from 1 to 3 */
+  grid-row: 1/3;
+}
+
+.box2a {
+  /* align-self: end; */
+  grid-column: 3;
+  grid-row: 1/3;
+}
+
+.box3a {
+  /* justify-self: end; */
+  grid-column: 2/4;
+  grid-row: 3;
+}
+
+.box4a {
+  /* overlap box 1 */
+  grid-column: 1;
+  grid-row: 2/4;
+  border: 1px solid #000;
+}
+
+.wrapper2 > div {
+  background: #eee;
+  padding: 1em;
+}
+
+.wrapper2 > div:nth-child(odd){
+  background: #ddd;
+}
+    
+  
+  /* button on the bottom of the page */  
+
+a {
+  text-decoration: none;
+}
+
+span {
+  margin: 20px;
+  /* margin: 0 auto;     */
+}
+
+.clearfix {
+  overflow: auto;
+  width: 90%;
+  text-align: center;
+  display: inline-block;
+  padding: 35px 10px 25px 10px;
+}
+  </style>
+</head>
+<body>
+    <div class="wrapper">
+      <div class="box box1">Box 1</div>
+      <div class="box box2">Box 2</div>
+      <div class="box box3">Box 3</div>
+      <div class="box box4">Box 4</div>   
+    </div>
+    <!-- Img -->
+    <div>
+      <img src="1_diagram_numbered_grid_lines.png" alt="Diagram Numbered Grid Lines">
+    </div>
+
+    <!-- second part -->
+    <div class="wrapper2">
+        <div class="box box1a">Box 1</div>
+        <div class="box box2a">Box 2</div>
+        <div class="box box3a">Box 3</div>
+        <div class="box box4a">Box4</div> 
+      </div>
+
+  <!-- <button>    
+        <a href="index.html">First Example</a>    
+    </button> -->
+    <div class="clearfix">
+        <div class="align">
+          <span style="float: left;">
+            <button>
+            <a href="index.html">First Page</a>
+            </button>
+          </span>        
+          <span style="float: left;">
+            <button>
+              <a href="index2.html">Second Page</a>
+            </button>  
+          </span>  
+        </div>
+        </div>
+</body>
+</html>
